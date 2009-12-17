@@ -1,0 +1,15 @@
+
+#include "bclib.bc"
+
+#define MAIN \
+	PUSH("+++++") \
+	PUSH("++") \
+	DIV \
+	PUSH("++") \
+	IFTHENELSE(ISEQUAL,PUSH("++++++++++")PUSH("++++++++++"),PUSH("+++")PUSH("+++")) \
+	MUL111 PRINTDEC
+
+	
+// Testing MUL224
+
+#define MAIN2 "->->>->@" MUL224 "@"

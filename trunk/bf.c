@@ -1,6 +1,9 @@
 
-#include "bflib.h"
-#include "wc.bf"
+/* Include here the bf program you wish to assemble */
+#include "test.bc"
+
+/* Set this to 0 if you want a standalone application without debug features */
+char g_debug = 1;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +31,6 @@ char ** loopstackptr = loopstack;
 char *minmemptr = &memory[30000];
 char *maxmemptr = &memory[30000];
 
-char g_debug = 1;
 char *g_filename = NULL;
 
 int main(int argc, char **argv)
