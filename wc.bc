@@ -1,8 +1,10 @@
 
+//Attempt to build a wc with braincuff
+
+// non braincuff functions
 #define INC_CHAR_COUNT "<<<[>>>>+<<<<-]<[>>>>+<<<<-]>>>>>+>" DUP \
 	IF(ISZERO,"<<+>>") \
 	"<[<<<<+>>>>-]<[<<<<+>>>>-]"
-
 
 #define MAIN2 \
 	">>" /*two bytes for lines*/ \
@@ -16,4 +18,3 @@
 	"" GETCH "----]" POP " end main loop " \
 	"@" PRINTDEC
 
-#define MAIN "->->>->@" MUL224 "@"

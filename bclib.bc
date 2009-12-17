@@ -1,14 +1,15 @@
 
-#ifndef BFLIB
-#define BFLIB
+#ifndef BCLIB
+#define BCLIB
 
 
-/*** RULES ***/
+/*** RULES FOR A PROPER DEVELOPMENT OF THE BRAINCUFF LIB ***/
 // The data pointer always points to the first free cell of the stack (0 at start, then)
 // Stack starts at zero and goes up into the positives. '>' goes up the stack 1 byte ('>' would be 'push 0')
-// Operations assume the unused stack is clean (zeroed)
+// Operations assume the unused part of the stack is clean (zeroed)
 // Operations must clean the unused stack (zero it)
 // Operations on data types more than 1 byte are suffixed with _X, X being the type size
+// ADDs and MULs are noted ADDxyz, with x and y the size in bytes of the two 'in' arguments and z the size of the output
 // Operations take the operands, destroy them (pop them) and push the result
 /*** END OF RULES ***/
 
@@ -141,6 +142,7 @@
 	"<[-<<<<<<+>>>>>>]" \
 	POP MUL111 "<[-<<<+>>>] " POP "end mul222 "
 
+// MUL224 is does not work properly yet
 #define MUL224 "mul224 < " TO4RIGHT \
 	"< " TO4RIGHT \
 	"< " TO4RIGHT \
@@ -150,6 +152,4 @@
 	DUP "<<<<<[->>>>>+>+<<<<<<]>>>>>>[-<<<<<<+>>>>>>] " MUL112 \
 	"end mul224 "
 
-#define PRINTDEC_2
-
-#endif // BFLIB
+#endif // BCLIB
